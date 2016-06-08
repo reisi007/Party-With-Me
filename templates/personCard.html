@@ -1,0 +1,8 @@
+<div ng-cloak class="flexbox_h">
+    <h5>{{person.firstName}} {{person.lastName}} ({{person.age}}) </h5>
+    <img ng-src="https://graph.facebook.com/{{person.id}}/picture?height=320&width=320">
+</div>
+<button ng-click="sendMessage(person.id)"
+        class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+    <i class="material-icons">account_circle</i>
+</button>

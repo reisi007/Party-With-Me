@@ -1,0 +1,20 @@
+footer.mdl-mini-footer {
+  @extend .flexbox;
+  margin: auto;
+  width: 100%;
+  align-items: baseline;
+  align-content: space-between;
+  $padding: 16px;
+  padding-top: $padding;
+  padding-bottom: 1.5*$padding;
+  a {
+    &:hover, &:focus, &:link, &:visited {
+      color: white;
+    }
+    div {
+      $margin: 3px;
+      margin-left: $margin;
+      margin-right: $margin;
+    }
+  }
+}

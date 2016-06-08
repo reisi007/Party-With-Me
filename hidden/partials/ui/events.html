@@ -1,0 +1,27 @@
+<div class="events" ng-controller="EventListController as elCtrl" ng-cloak>
+    <div class="mdl-spinner mdl-js-spinner is-active" ng-show="!fetched && events.length == 0"
+    >
+    </div>
+    <h3 ng-show="fetched && events.length == 0">Please add yourself to some events on Facebook!</h3>
+    <div ng-show="events.length > 0 && fetched" class="flexbox">
+        <div class="mdl-card mdl-shadow--2dp" ng-repeat="event in events track by event.id">
+            <span class="mdl-badge mdl-badge--overlap" data-badge="{{get3DigitName(event.pwm_requests)}}"></span>
+            <div class="mdl-card__title" back-img="{{event.coverUrl}}">
+                <h2 class="mdl-card__title-text readableText">{{event.name}}</h2>
+            </div>
+            <div class="mdl-card__supporting-text whiteSpace">{{event.description}}</div>
+
+            <div class="mdl-card__actions mdl-card--border">
+                <div>
+                    <button ng-click="goToEvent(event.id)"
+                            ng-init="addRemove = event.self_going==='1'?'find someone':'add yourself'"
+                            ng-class="{text_add : event.self_going !=='1', 'text_remove' :event.self_going==='1'}"
+                            class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Go to the event page - {{addRemove}}!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

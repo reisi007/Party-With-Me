@@ -1,0 +1,39 @@
+.mdl-layout__header {
+  img.logo {
+    min-height: 20px;
+    height: 45px;
+    width: auto;
+    $padding: 10px;
+    padding-left: $padding;
+    padding-right: $padding;
+  }
+
+  .mdl-layout__header-row {
+    padding-left: 0;
+  }
+  ul.mdl-menu {
+    min-width: 155px;
+    li {
+      $padding: 4px;
+      padding-left: 3*$padding;
+      padding-right: $padding;
+      a {
+        display: inline-block;
+        width: 100%;
+        text-decoration: none;
+        color: black;
+        font-size: 1.2em;
+        .material-icons {
+          vertical-align: middle;
+          position: relative;
+          right: 0.33em;
+          top: -0.08em
+        }
+      }
+    }
+  }
+  a.mdl-layout-title {
+    color: white;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,65 @@
+/// Stroke font-character
+/// @param  {Integer} $stroke - Stroke width
+/// @param  {Color}   $color  - Stroke color
+/// @return {List}            - text-shadow list
+@function stroke($stroke, $color) {
+  $shadow: ();
+  $from: $stroke*-1;
+  @for $i from $from through $stroke {
+    @for $j from $from through $stroke {
+      $shadow: append($shadow, $i*1px $j*1px 0 $color, comma);
+    }
+  }
+  @return $shadow;
+}
+
+/// Stroke font-character
+/// @param  {Integer} $stroke - Stroke width
+/// @param  {Color}   $color  - Stroke color
+/// @return {Style}           - text-shadow
+@mixin stroke($stroke, $color) {
+  text-shadow: stroke($stroke, $color);
+}
+
+/// @param {Color} $color - Button color
+@mixin buttonColor($color) {
+  & {
+    background-color: $color;
+    &:active, &:hover, &:focus:not(:active) {
+      background-color: $color;
+    }
+  }
+}
+
+/// @param {Color} $color - The background color of the dialog
+@mixin dialogBackground($color) {
+  &::backdrop {
+    background-color: $color;
+  }
+  & + .backdrop {
+    background-color: $color;
+  }
+}
+
+@mixin matchDialog($width) {
+  width: $width+ 10px;
+  min-height: $width+ 130px;
+  $colorValue: 40%;
+  @include dialogBackground(rgba($colorValue, $colorValue, $colorValue, 0.75));
+  div.flexbox_h {
+    min-width: $width;
+  }
+  div.matchPerson {
+    height: $width;
+  }
+  pwm-personcard {
+    .mdl-button {
+      position: relative;
+      bottom: $fabRadius + $personCardOffset/2;
+      right: -$width + $fabRadius+ $personCardOffset;
+    }
+    img {
+      width: $width;
+    }
+  }
+}

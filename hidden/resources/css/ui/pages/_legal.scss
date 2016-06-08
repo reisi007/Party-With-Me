@@ -1,0 +1,10 @@
+.impressum {
+  @extend .flexbox;
+  width: 90%;
+  min-width: 400px;
+  margin: auto;
+  height: 100%;
+  h1 {
+    text-align: center;
+  }
+}

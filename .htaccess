@@ -1,0 +1,3 @@
+Options All +Indexes
+RedirectMatch 308 "(\.(sass-cache|git)|node_modules|md)" /
+RedirectMatch 308 "(\.gitignore|((package).json)|Gruntfile.js)" /

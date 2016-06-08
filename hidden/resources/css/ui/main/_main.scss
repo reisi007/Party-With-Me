@@ -1,0 +1,72 @@
+@import "header";
+@import "footer";
+@import "fonzsize";
+
+.event, .events {
+  padding-top: 10px;
+}
+
+.readableText {
+  color: white;
+  text-shadow: stroke(3, black);
+}
+
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.flexbox_h {
+  @extend .flexbox;
+  flex-direction: column !important;
+}
+
+.flexbox.controls {
+  @extend .flexbox;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.whiteSpace {
+  white-space: pre-wrap;
+  overflow: auto;
+  height: auto;
+}
+
+//Login button
+div.login {
+  padding: 2vmin;
+  text-align: center;
+  .mdl-button {
+    margin: 4px;
+    padding: 10px;
+    width: 280px;
+    img {
+      padding-top: -$loginButtonPadding - 1px;
+      padding-bottom: $loginButtonPadding;
+      padding-right: 3* $loginButtonPadding;
+      min-height: 20px;
+      height: 40px;
+      max-height: 85%;
+      width: auto;
+      vertical-align: middle;
+    }
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+//Adblocker detected
+.ab {
+  text-align: center;
+  position: relative;
+  top: 100px;
+}
+
+dialog {
+  border-color: white;
+}

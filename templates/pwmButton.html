@@ -1,0 +1,8 @@
+<div ng-controller="PartyWithMeButtonController as PwmBCtrl">
+    <button ng-show="!isPartyWithme()" ng-click="addPartyWithme()"
+            class="mdl-button mdl-js-button add right">Add me !
+    </button>
+    <button ng-show="isPartyWithme()" ng-click="removePartyWithme()"
+            class="mdl-button mdl-js-button remove right"> Remove me !
+    </button>
+</div>

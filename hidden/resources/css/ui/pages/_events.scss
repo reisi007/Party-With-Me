@@ -1,0 +1,54 @@
+.events {
+  $padding: 4px;
+  margin: $padding;
+  .mdl-badge {
+    z-index: 2;
+    position: relative;
+    $spacer: 4px;
+    right: 2*$spacer;
+    top: 4* $spacer;
+    &[data-badge]:after {
+      $r: 27.5px;
+      width: $r;
+      height: $r;
+    }
+  }
+  .mdl-card {
+    $width: 300px;
+    width: $width;
+    height: 350px;
+    margin-top: 3*$padding;
+    margin-bottom: 3*$padding;
+    display: flex;
+    flex-direction: column;
+    div.mdl-card__title {
+      padding: 2em;
+    }
+    div.mdl-card__supporting-text {
+      flex-shrink: 5;
+    }
+    div.mdl-card__actions.mdl-card--border {
+      height: 52px;
+      div {
+        position: absolute;
+        bottom: 4px;
+        vertical-align: bottom;
+        width: 100%;
+        text-align: center;
+      }
+    }
+    button {
+      position: relative;
+      left: - 2* $padding;
+      padding-left: $padding;
+      padding-right: $padding;
+      width: $width - 2* $padding;
+    }
+    .text_remove {
+      font-size: 13px;
+    }
+    .text_add {
+      font-size: 13.4px;
+    }
+  }
+}

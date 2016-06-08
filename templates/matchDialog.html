@@ -1,0 +1,16 @@
+<dialog class="mdl-dialog" id="matchDialog">
+    <h4>Match game</h4>
+    <div class="flexbox_h">
+        <h1 ng-show="current().length === 0" class="small">Currently no matches available</h1>
+        <div class="matchPerson" ng-repeat="p in current() track by p.id">
+            <pwm-personcard person="p"></pwm-personcard>
+            <button ng-click="next()"
+                    class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect next">
+                <i class="material-icons">undo</i>
+            </button>
+        </div>
+    </div>
+    <div class="mdl-dialog__action">
+        <button type="button" class="mdl-button close">Close match game</button>
+    </div>
+</dialog>

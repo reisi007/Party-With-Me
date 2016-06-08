@@ -1,0 +1,18 @@
+{
+  "short_name": "Partywithme",
+  "name": "Partywithme.club - Never party alone again",
+  "icons": [
+    {
+      "src": "png/static/v1.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "png/favicon.png",
+      "sizes": "300x300",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.php",
+  "display": "standalone"
+}

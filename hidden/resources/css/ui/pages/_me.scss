@@ -1,0 +1,12 @@
+.me {
+  @extend .flexbox;
+  align-items: stretch;
+  .flexbox_h {
+    align-content: space-around;
+    button {
+      $padding: 16px;
+      margin-top: $padding;
+      margin-bottom: $padding;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "partywithme",
+  "version": "0.9.1",
+  "description": "See partywithme.club",
+  "main": "ui/index.html",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.6.0",
+    "babel-runtime": "^6.6.1",
+    "dialog-polyfill": "^0.4.3",
+    "grunt": "^1.0.1",
+    "grunt-babel": "^6.0.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "npm-check-updates": "^2.6.3",
+    "sass": "^0.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/reisi007/partywithme.git"
+  },
+  "scripts": {
+    "postinstall": "npm dedupe"
+  },
+  "author": "Florian Reisinger",
+  "license": "UNLICENSED",
+  "homepage": "https://bitbucket.org/reisi007/partywithme#readme"
+}

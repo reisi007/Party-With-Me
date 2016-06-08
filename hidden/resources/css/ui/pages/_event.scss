@@ -1,0 +1,107 @@
+.event {
+  $base: 3em;
+  .mdl-card {
+    width: 95vw;
+    margin: auto;
+    max-height: 8* $base;
+  }
+  .mdl-card__title.large {
+    padding: $base;
+
+  }
+  .age {
+    $width: 30px;
+    max-width: 100%;
+    width: $width;
+  }
+  label.interested {
+    $width: 150px;
+    width: $width;
+    max-width: 100%;
+  }
+  .flexbox.mdl-card__title {
+    justify-content: space-between;
+  }
+  .mdl-card__supporting-text {
+    width: auto;
+  }
+
+  .right {
+    align-self: flex-end;
+  }
+}
+
+pwm-pwm-button {
+  .mdl-button {
+    &.add {
+      color: white;
+      @include buttonColor($acceptGreen);
+    }
+    &.remove {
+      color: white;
+      @include buttonColor($declineRed);
+    }
+  }
+}
+
+pwm-personcard {
+  padding: 4px;
+  position: relative;
+  text-align: center;
+  .mdl-button {
+    position: absolute;
+    right: $personCardOffset;
+    bottom: 5/8*$personCardOffset;
+    color: white;
+    @include buttonColor($acceptGreen);
+  }
+  .flexbox_h {
+    align-items: center;
+  }
+  img {
+    $side: 320px;
+    width: $side;
+    height: auto;
+  }
+}
+
+image {
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+}
+
+.mdl-button#matchingGameStart {
+  border-radius: 0.75em;
+}
+
+dialog#matchDialog {
+  max-width: 98%;
+  h4, h5 {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+  button.mdl-button.next {
+    color: white;
+    @include buttonColor($declineRed);
+    position: relative;
+    bottom: $fabRadius +$personCardOffset/2;
+    left: -$fabRadius+ $personCardOffset;
+  }
+  .mdl-dialog__action {
+    position: relative;
+    top: 58px;
+  }
+  @include matchDialog(320px);
+  @media screen {
+    $i: 100px;
+    $inc: 20px;
+    @while ($i<=300px) {
+      @media (min-width: $i) and (max-width: $i+$inc) {
+        @include matchDialog($i - $inc);
+      }
+      $i: $i+$inc;
+    }
+
+  }
+}
