@@ -1,6 +1,7 @@
 module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        ftp: grunt.file.readJSON('ftp.sec.json'),
         babel: {
             options: {
                 presets: ["es2015"],
@@ -59,6 +60,18 @@ module.exports = function (grunt) {
                 ]
             }
         },
+        ftpush: {
+            deploy: {
+                auth: {
+                    authKey: "release",
+                    host: '<%= ftp.server %>',
+                    port: '<%= ftp.port %>'
+                },
+                src: "./deploy",
+                dest: "/",
+                keep: "/hidden/config/*.php"
+            }
+        },
         sass: {
             dist: {
                 options: {
@@ -108,9 +121,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-ftpush');
 
     grunt.registerTask('watcherDoJsNoUgly', ['concat', 'babel', 'uglify:dev']);
     grunt.registerTask('watcherDoJs', ['concat', 'babel', 'uglify:default']);
     grunt.registerTask('default', ['watcherDoJsNoUgly', 'copy:dev', 'sass', 'watch']);
-    grunt.registerTask('deploy', ['watcherDoJs', 'clean', 'copy:dev', 'sass', 'copy:deploy'])
+    grunt.registerTask('deploy', ['watcherDoJs', 'clean', 'copy:dev', 'sass', 'copy:deploy', 'ftpush:deploy'])
 };

@@ -1,6 +1,6 @@
 {
   "name": "partywithme",
-  "version": "0.9.1",
+  "version": "1.0.1",
   "description": "See partywithme.club",
   "main": "ui/index.html",
   "devDependencies": {
@@ -15,17 +15,18 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-ftpush": "^0.3.3",
     "npm-check-updates": "^2.6.3",
     "sass": "^0.5.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/reisi007/partywithme.git"
+    "url": "git+ssh://git@github.com:reisi007/Party-With-Me.git"
   },
   "scripts": {
     "postinstall": "npm dedupe"
   },
   "author": "Florian Reisinger",
-  "license": "UNLICENSED",
+  "license": "GPL-3.0+",
   "homepage": "https://bitbucket.org/reisi007/partywithme#readme"
 }

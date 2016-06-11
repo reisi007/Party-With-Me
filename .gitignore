@@ -54,7 +54,9 @@ fabric.properties
 # Excludet files / folders
 node_modules/*
 .sass-cache
+.grunt
 hidden/resources/tmp/*
 /deploy/
 /res/
 *\.sec\.?*
+.ftppass
